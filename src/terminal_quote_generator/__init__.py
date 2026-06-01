@@ -1,0 +1,2 @@
+"""Terminal Quote Generator package."""
+

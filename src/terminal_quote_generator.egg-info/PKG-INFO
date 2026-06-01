@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: terminal-quote-generator
+Version: 1.0.0
+Summary: A global PowerShell terminal quote generator with local caching.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: colorama>=0.4.6
+
+# Terminal Quote Generator
+
+Global PowerShell-friendly quote generator with live quotes, local caching, and styled terminal output.
+
+## Install
+
+```powershell
+cd C:\terminal-quotes
+py -3 -m pip install -e .
+```
+
+After that, you can run:
+
+```powershell
+quote-gen
+```
+
+from any PowerShell directory.
+
+## File structure
+
+```text
+C:\terminal-quotes
+├─ pyproject.toml
+├─ setup.py
+├─ README.md
+└─ src
+   └─ terminal_quote_generator
+      ├─ __init__.py
+      └─ cli.py
+```
+
+## What it does
+
+- Fetches random quotes from `https://zenquotes.io`
+- Uses your terminal width to wrap text cleanly
+- Saves config and cache under `%APPDATA%\TerminalQuoteGenerator\`
+- Falls back to cached output when offline or within the configured refresh interval
+
+## Configuration
+
+On first run, the app creates:
+
+`%APPDATA%\TerminalQuoteGenerator\config.ini`
+
+Default settings:
+
+- `interval_minutes = 60`
+- `theme_color = MAGENTA`
+
+It also stores cache at:
+
+`%APPDATA%\TerminalQuoteGenerator\cache.json`
