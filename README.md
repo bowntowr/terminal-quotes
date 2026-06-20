@@ -5,6 +5,7 @@ Global PowerShell-friendly quote generator with live quotes, local caching, and 
 ## Install
 
 ```powershell
+git clone https://bowntowr/terminal-quotes C:\terminal-quotes
 cd C:\terminal-quotes
 py -3 -m pip install -e .
 ```
